@@ -25,9 +25,22 @@ export function RegistrationForm() {
     },
   });
 
+  const onSubmit = async (data: z.infer<typeof schema>) => {
+    const resp = await fetch("http://localhost:3000/api/register", {
+      method: "POST",
+      headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data }),
+    });
+    const json = await resp.json();
+    console.log({ data, json });
+  };
+
   return (
     <Form {...form}>
-      <form className="space-y-8">
+      <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
         <div className="flex gap-2 w-full flex-wrap">
           <FormField
             control={form.control}

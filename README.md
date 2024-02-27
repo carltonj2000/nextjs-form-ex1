@@ -15,4 +15,6 @@ cd nextjs-form-ex1/
 npx shadcn-ui@latest init
 npx shadcn-ui@latest add form
 npx shadcn-ui@latest add input
+
+ npx next telemetry disable
 ```
