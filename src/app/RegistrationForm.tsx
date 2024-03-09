@@ -26,13 +26,13 @@ export function RegistrationForm() {
   });
 
   const onSubmit = async (data: z.infer<typeof schema>) => {
-    const resp = await fetch("http://localhost:3000/api/register", {
+    const resp = await fetch("/api/register", {
       method: "POST",
       headers: {
         Accept: "application.json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ data }),
+      body: JSON.stringify(data),
     });
     const json = await resp.json();
     console.log({ data, json });

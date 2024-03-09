@@ -18,3 +18,9 @@ npx shadcn-ui@latest add input
 
  npx next telemetry disable
 ```
+
+## Server Tests
+
+```bash
+curl -X POST http://localhost:3000/api/register -d "{}" -H "Content-Type: application/json"
+```
