@@ -45,6 +45,7 @@ export function RegistrationForm({
       first: "",
       last: "",
       email: "",
+      zipcode: "",
     },
   });
 
@@ -148,6 +149,19 @@ export function RegistrationForm({
                 <Input placeholder="" {...field} />
               </FormControl>
               <FormDescription>Your email address</FormDescription>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="zipcode"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Zipcode</FormLabel>
+              <FormControl>
+                <Input placeholder="" {...field} />
+              </FormControl>
+              <FormDescription>Your Zipcode</FormDescription>
             </FormItem>
           )}
         />
